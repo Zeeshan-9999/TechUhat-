@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TechUhat - Technical Mastery</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#4dd9e4",
+                        "primary": "#ffb59c",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#004145",
+                        "surface-variant": "#3f322e",
+                        "surface-dim": "#1b110d",
+                        "surface-container-highest": "#3f322e",
+                        "secondary-container": "#3f465c",
+                        "on-secondary-fixed": "#131b2e",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#ffb59c",
+                        "primary-fixed": "#ffdbcf",
+                        "tertiary-fixed": "#7af4ff",
+                        "tertiary-container": "#00b5c0",
+                        "on-primary": "#5c1a00",
+                        "background": "#1b110d",
+                        "on-tertiary-fixed": "#002022",
+                        "outline": "#a68b82",
+                        "on-secondary": "#283044",
+                        "on-tertiary-fixed-variant": "#004f54",
+                        "on-primary-fixed-variant": "#822800",
+                        "surface-container-high": "#342723",
+                        "outline-variant": "#57423b",
+                        "on-surface": "#f4ded7",
+                        "surface-container-lowest": "#160c08",
+                        "on-surface-variant": "#dec0b6",
+                        "on-primary-fixed": "#380c00",
+                        "surface-bright": "#443632",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#1b110d",
+                        "primary-container": "#ff7f50",
+                        "inverse-on-surface": "#3a2e29",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "secondary-fixed": "#dae2fd",
+                        "surface-tint": "#ffb59c",
+                        "on-error": "#690005",
+                        "tertiary": "#4dd9e4",
+                        "on-background": "#f4ded7",
+                        "secondary": "#bec6e0",
+                        "inverse-surface": "#f4ded7",
+                        "inverse-primary": "#a43c12",
+                        "on-tertiary": "#00363a",
+                        "on-primary-container": "#6c2000",
+                        "on-secondary-container": "#adb4ce",
+                        "surface-container": "#281d19",
+                        "surface-container-low": "#241915"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "0.5rem",
+                        "stack-lg": "2rem",
+                        "gutter": "1.5rem",
+                        "stack-md": "1rem",
+                        "unit": "4px",
+                        "container-padding": "2rem"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "code": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-xl": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "code": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-sm": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #131315;
+            color: #f4ded7;
+        }
+
+        .glass-panel {
+            background-color: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid #45464D;
+        }
+
+        .premium-border {
+            position: relative;
+            background: linear-gradient(to right, #45464D, #ff7f50);
+            padding: 1px;
+            border-radius: 0.75rem;
+        }
+
+        .premium-inner {
+            background-color: #0F172A;
+            border-radius: calc(0.75rem - 1px);
+            height: 100%;
+        }
+
+        .btn-primary {
+            background-color: #ff7f50;
+            color: #ffffff;
+            transition: transform 200ms ease;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(255, 127, 80, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid #45464D;
+            color: #f4ded7;
+            transition: all 200ms ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: #a68b82;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col font-body-lg text-body-lg">
+    <!-- TopAppBar Component -->
+    <nav
+        class="sticky top-0 w-full z-50 border-b border-slate-800 bg-slate-900/80 backdrop-blur-md border-b border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+        <div class="flex items-center justify-between px-6 h-16 max-w-[1440px] mx-auto">
+            <!-- Brand -->
+            <div class="text-xl font-extrabold tracking-tighter text-orange-500">
+                TechUhat
+            </div>
+            <!-- Navigation Links (Hidden on Mobile) -->
+            <div
+                class="hidden md:flex items-center gap-6 h-full font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight">
+                <a class="h-full flex items-center text-slate-400 hover:text-white transition-colors hover:bg-white/5 rounded-md transition-all duration-200 px-3"
+                    href="#">Courses</a>
+                <a class="h-full flex items-center text-slate-400 hover:text-white transition-colors hover:bg-white/5 rounded-md transition-all duration-200 px-3"
+                    href="#">Articles</a>
+                <a class="h-full flex items-center text-slate-400 hover:text-white transition-colors hover:bg-white/5 rounded-md transition-all duration-200 px-3"
+                    href="#">Practice</a>
+                <a class="h-full flex items-center text-slate-400 hover:text-white transition-colors hover:bg-white/5 rounded-md transition-all duration-200 px-3"
+                    href="#">Community</a>
+            </div>
+            <!-- Actions -->
+            <div class="flex items-center gap-4">
+                <span
+                    class="material-symbols-outlined text-slate-400 hover:text-white cursor-pointer active:scale-95 transition-transform"
+                    data-icon="notifications">notifications</span>
+                <span
+                    class="material-symbols-outlined text-slate-400 hover:text-white cursor-pointer active:scale-95 transition-transform"
+                    data-icon="account_circle">account_circle</span>
+                <button
+                    class="btn-primary px-4 py-2 rounded-md font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight active:scale-95 transition-transform">
+                    Go Pro
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col gap-stack-lg pb-stack-lg">
+        <!-- Hero Section -->
+        <section
+            class="relative w-full overflow-hidden px-container-padding py-24 md:py-32 flex items-center justify-center min-h-[716px]">
+            <!-- Decorative Background Elements -->
+            <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+                <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-container rounded-full blur-[120px]"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-tertiary-container rounded-full blur-[120px]">
+                </div>
+            </div>
+            <div class="relative z-10 max-w-[1000px] mx-auto text-center flex flex-col items-center gap-stack-md">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#45464D] bg-[#0F172A]/50 backdrop-blur-sm mb-4">
+                    <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+                    <span class="font-label-sm text-label-sm text-on-surface-variant">New React Advanced Patterns Course
+                        Live</span>
+                </div>
+                <h1 class="font-display-lg text-display-lg text-inverse-surface max-w-4xl">
+                    Master Modern Tech stacks with <span class="text-primary-container">Precision</span>
+                </h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-4">
+                    Elevate your engineering skills with deep-dive courses, interactive practice environments, and
+                    insights from industry leaders. Built for developers who demand more.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center gap-4 mt-8 w-full sm:w-auto">
+                    <button
+                        class="btn-primary w-full sm:w-auto px-8 py-3 rounded-lg font-headline-md text-[16px] flex items-center justify-center gap-2">
+                        Explore Courses
+                        <span class="material-symbols-outlined text-[20px]"
+                            data-icon="arrow_forward">arrow_forward</span>
+                    </button>
+                    <button
+                        class="btn-secondary w-full sm:w-auto px-8 py-3 rounded-lg font-headline-md text-[16px] flex items-center justify-center gap-2">
+                        View Pricing
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Highlights / Features Bento Grid -->
+        <section class="px-container-padding max-w-[1440px] mx-auto w-full">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Feature 1 -->
+                <div
+                    class="glass-panel rounded-xl p-6 flex flex-col gap-4 items-start group hover:border-primary-container transition-colors duration-300">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center border border-outline-variant group-hover:bg-primary-container/10 transition-colors">
+                        <span class="material-symbols-outlined text-primary-container text-2xl"
+                            data-icon="terminal">terminal</span>
+                    </div>
+                    <h3 class="font-headline-md text-[20px] text-inverse-surface">In-Browser Coding</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Practice immediately with our
+                        zero-setup environments. Write, test, and run code alongside the lessons.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div
+                    class="glass-panel rounded-xl p-6 flex flex-col gap-4 items-start group hover:border-primary-container transition-colors duration-300">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center border border-outline-variant group-hover:bg-primary-container/10 transition-colors">
+                        <span class="material-symbols-outlined text-primary-container text-2xl"
+                            data-icon="library_books">library_books</span>
+                    </div>
+                    <h3 class="font-headline-md text-[20px] text-inverse-surface">Deep-Dive Articles</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Access a library of technical essays
+                        and architectural breakdowns written by senior engineers.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div
+                    class="glass-panel rounded-xl p-6 flex flex-col gap-4 items-start group hover:border-primary-container transition-colors duration-300">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center border border-outline-variant group-hover:bg-primary-container/10 transition-colors">
+                        <span class="material-symbols-outlined text-primary-container text-2xl"
+                            data-icon="forum">forum</span>
+                    </div>
+                    <h3 class="font-headline-md text-[20px] text-inverse-surface">Elite Community</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Join a network of driven developers.
+                        Discuss patterns, review code, and grow together.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Featured Courses Grid -->
+        <section class="px-container-padding max-w-[1440px] mx-auto w-full mt-16">
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <h2 class="font-headline-xl text-headline-xl text-inverse-surface">Featured Paths</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant mt-2">Curated curriculums to accelerate
+                        your career.</p>
+                </div>
+                <button
+                    class="text-primary-container hover:text-primary transition-colors flex items-center gap-1 font-label-sm text-label-sm">
+                    View All <span class="material-symbols-outlined text-[16px]"
+                        data-icon="arrow_forward">arrow_forward</span>
+                </button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+                <!-- Course Card 1 (Premium) -->
+                <div class="premium-border group cursor-pointer h-full">
+                    <div class="premium-inner flex flex-col overflow-hidden">
+                        <div class="h-48 w-full bg-surface-container-highest relative overflow-hidden">
+                            <img alt="Abstract dark code editor interface with colorful syntax highlighting"
+                                class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Abstract dark code editor interface with glowing syntax highlighting in neon teal and coral on a dark background"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkK-gP_bRl34vLOwWCVglgk2GxU708cNBdqQXDNH8CuRTO_Mb33TwDwjcwbuZXDI0bNsSAc1YHowV1bOn78wj0eRrTTb7whUmAbMYtdvO-JVA2Z676E-TZtuKMclaiBEm6xqNWSTKQ3jsM_50YgW3B0Nsz7Flzq3Wyh9EnbBSvwOHLvdhqH3qaXkJXNkr62xPshY8NJ9M8pMvx6VDqgjLWaDeDdeMFAW8Md1Oi26ux6um5Eal9tXlCsceEBL0dv9Q4_hxeg3Z0_y0" />
+                            <div
+                                class="absolute top-4 right-4 bg-background/80 backdrop-blur-md px-2 py-1 rounded text-xs font-bold text-primary-container border border-primary-container/30">
+                                PRO</div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow gap-4">
+                            <div class="flex items-center gap-2 text-xs text-on-surface-variant font-code">
+                                <span class="bg-surface-container px-2 py-1 rounded">React</span>
+                                <span class="bg-surface-container px-2 py-1 rounded">Architecture</span>
+                            </div>
+                            <h3
+                                class="font-headline-md text-[20px] text-inverse-surface group-hover:text-primary-container transition-colors">
+                                Advanced React Patterns</h3>
+                            <p class="font-body-md text-[14px] text-on-surface-variant line-clamp-2">Master compound
+                                components, custom hooks, and state management at scale.</p>
+                            <div
+                                class="mt-auto pt-4 border-t border-outline-variant/30 flex items-center justify-between">
+                                <div class="flex items-center gap-1 text-primary-container">
+                                    <span class="material-symbols-outlined text-[16px]" data-icon="star"
+                                        data-weight="fill">star</span>
+                                    <span class="font-label-sm text-[14px]">4.9</span>
+                                    <span class="text-on-surface-variant text-[12px] ml-1">(120 reviews)</span>
+                                </div>
+                                <span class="font-headline-md text-[16px] text-inverse-surface">$99</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Course Card 2 -->
+                <div class="glass-panel rounded-xl flex flex-col overflow-hidden group cursor-pointer h-full">
+                    <div class="h-48 w-full bg-surface-container-highest relative overflow-hidden">
+                        <img alt="Server rack lights glowing in a dark data center"
+                            class="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-500"
+                            data-alt="Rows of server racks in a dark data center with glowing blue and coral indicator lights reflecting on metallic surfaces"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB50suGDne-hJ3TTPhfcQx4AguVLzs82wlHNKo8e9vAZ5h8QeJ1EkuVwd9OSR3xWe32iLBo7ckqNZq7VvEUiiqvSCqqTSl8Q9o9ioPKRaKyoJxrnEtgavrq1QH3mTMm8fAhFn0zK3ZJgCdWiRua3SOcLgnMiMeI3_t04WOic9lPn_-jQ-nAftLCYja35IoyCi7zjfoqY-SF7rHKRpRr8Njf9cXMkrMP5Sn8L8oHAfspnGhI-HRsue-KsxK2jVS4gZpE9hpmJkjqrk4" />
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow gap-4">
+                        <div class="flex items-center gap-2 text-xs text-on-surface-variant font-code">
+                            <span class="bg-surface-container px-2 py-1 rounded">Backend</span>
+                            <span class="bg-surface-container px-2 py-1 rounded">Node.js</span>
+                        </div>
+                        <h3
+                            class="font-headline-md text-[20px] text-inverse-surface group-hover:text-primary-container transition-colors">
+                            Scaling Node.js APIs</h3>
+                        <p class="font-body-md text-[14px] text-on-surface-variant line-clamp-2">Learn to build,
+                            profile, and scale high-performance Node APIs for enterprise.</p>
+                        <div class="mt-auto pt-4 border-t border-outline-variant/30 flex items-center justify-between">
+                            <div class="flex items-center gap-1 text-primary-container">
+                                <span class="material-symbols-outlined text-[16px]" data-icon="star"
+                                    data-weight="fill">star</span>
+                                <span class="font-label-sm text-[14px]">4.8</span>
+                                <span class="text-on-surface-variant text-[12px] ml-1">(85 reviews)</span>
+                            </div>
+                            <span class="font-headline-md text-[16px] text-inverse-surface">$79</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Course Card 3 -->
+                <div class="glass-panel rounded-xl flex flex-col overflow-hidden group cursor-pointer h-full">
+                    <div class="h-48 w-full bg-surface-container-highest relative overflow-hidden">
+                        <img alt="Data visualization dashboard on a dark screen"
+                            class="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-500"
+                            data-alt="Modern data visualization dashboard with dark theme showing glowing charts and graphs in coral and teal tones"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_yXTBrLYt3SoTmYX8-NIsxXHCRWSXJ9lw2RMx0oVcNu_pP8bizGoryPG_WNChAKBgM2V6ofsuE-8KUFOfmzEYUtT9mjXHjnTaFLtjTi8qGbWoPS_ge5vrFb8hXjIyvXMs6pWDR9Ta5cohYFsnce1qM0W6eBwWmCqwJQv4N4SWQOvEPYnskrSqx_M0b3h4KSP2B0GtZdezeRtXa68ME11hRyuN1Z6HQrJ_RFoxsbxOfgoTEG8FUIk5e_we9G9fNueQEC1IpSP9ygk" />
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow gap-4">
+                        <div class="flex items-center gap-2 text-xs text-on-surface-variant font-code">
+                            <span class="bg-surface-container px-2 py-1 rounded">System Design</span>
+                        </div>
+                        <h3
+                            class="font-headline-md text-[20px] text-inverse-surface group-hover:text-primary-container transition-colors">
+                            Distributed Systems Foundations</h3>
+                        <p class="font-body-md text-[14px] text-on-surface-variant line-clamp-2">Core concepts of
+                            distributed architecture, consensus, and fault tolerance.</p>
+                        <div class="mt-auto pt-4 border-t border-outline-variant/30 flex items-center justify-between">
+                            <div class="flex items-center gap-1 text-primary-container">
+                                <span class="material-symbols-outlined text-[16px]" data-icon="star"
+                                    data-weight="fill">star</span>
+                                <span class="font-label-sm text-[14px]">4.9</span>
+                                <span class="text-on-surface-variant text-[12px] ml-1">(210 reviews)</span>
+                            </div>
+                            <span class="font-headline-md text-[16px] text-inverse-surface">$89</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer Component -->
+    <footer class="w-full border-t border-slate-800 mt-auto bg-[#131315] flat no-shadows">
+        <div class="flex flex-col md:flex-row justify-between items-center py-8 px-8 gap-4 max-w-[1440px] mx-auto">
+            <div class="text-lg font-bold text-slate-200">
+                TechUhat
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 font-['Plus_Jakarta_Sans'] text-xs text-slate-500">
+                <a class="text-slate-500 hover:text-orange-500 hover:underline underline-offset-4 transition-all duration-300"
+                    href="#">Documentation</a>
+                <a class="text-slate-500 hover:text-orange-500 hover:underline underline-offset-4 transition-all duration-300"
+                    href="#">Changelog</a>
+                <a class="text-slate-500 hover:text-orange-500 hover:underline underline-offset-4 transition-all duration-300"
+                    href="#">Privacy</a>
+                <a class="text-slate-500 hover:text-orange-500 hover:underline underline-offset-4 transition-all duration-300"
+                    href="#">Support</a>
+            </div>
+            <div class="font-['Plus_Jakarta_Sans'] text-xs text-slate-500">
+                © 2024 TechUhat. Built for technical mastery.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

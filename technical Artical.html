@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>TechUhat - Articles List</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+                rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                rel="stylesheet" />
+        <script id="tailwind-config">
+                tailwind.config = {
+                        darkMode: "class",
+                        theme: {
+                                extend: {
+                                        "colors": {
+                                                "tertiary-fixed-dim": "#4dd9e4",
+                                                "primary": "#ffb59c",
+                                                "error-container": "#93000a",
+                                                "on-tertiary-container": "#004145",
+                                                "surface-variant": "#3f322e",
+                                                "surface-dim": "#1b110d",
+                                                "surface-container-highest": "#3f322e",
+                                                "secondary-container": "#3f465c",
+                                                "on-secondary-fixed": "#131b2e",
+                                                "error": "#ffb4ab",
+                                                "primary-fixed-dim": "#ffb59c",
+                                                "primary-fixed": "#ffdbcf",
+                                                "tertiary-fixed": "#7af4ff",
+                                                "tertiary-container": "#00b5c0",
+                                                "on-primary": "#5c1a00",
+                                                "background": "#1b110d",
+                                                "on-tertiary-fixed": "#002022",
+                                                "outline": "#a68b82",
+                                                "on-secondary": "#283044",
+                                                "on-tertiary-fixed-variant": "#004f54",
+                                                "on-primary-fixed-variant": "#822800",
+                                                "surface-container-high": "#342723",
+                                                "outline-variant": "#57423b",
+                                                "on-surface": "#f4ded7",
+                                                "surface-container-lowest": "#160c08",
+                                                "on-surface-variant": "#dec0b6",
+                                                "on-primary-fixed": "#380c00",
+                                                "surface-bright": "#443632",
+                                                "on-error-container": "#ffdad6",
+                                                "surface": "#1b110d",
+                                                "primary-container": "#ff7f50",
+                                                "inverse-on-surface": "#3a2e29",
+                                                "on-secondary-fixed-variant": "#3f465c",
+                                                "secondary-fixed-dim": "#bec6e0",
+                                                "secondary-fixed": "#dae2fd",
+                                                "surface-tint": "#ffb59c",
+                                                "on-error": "#690005",
+                                                "tertiary": "#4dd9e4",
+                                                "on-background": "#f4ded7",
+                                                "secondary": "#bec6e0",
+                                                "inverse-surface": "#f4ded7",
+                                                "inverse-primary": "#a43c12",
+                                                "on-tertiary": "#00363a",
+                                                "on-primary-container": "#6c2000",
+                                                "on-secondary-container": "#adb4ce",
+                                                "surface-container": "#281d19",
+                                                "surface-container-low": "#241915"
+                                        },
+                                        "borderRadius": {
+                                                "DEFAULT": "0.25rem",
+                                                "lg": "0.5rem",
+                                                "xl": "0.75rem",
+                                                "full": "9999px"
+                                        },
+                                        "spacing": {
+                                                "stack-sm": "0.5rem",
+                                                "stack-lg": "2rem",
+                                                "gutter": "1.5rem",
+                                                "stack-md": "1rem",
+                                                "unit": "4px",
+                                                "container-padding": "2rem"
+                                        },
+                                        "fontFamily": {
+                                                "body-lg": [
+                                                        "Inter"
+                                                ],
+                                                "display-lg": [
+                                                        "Plus Jakarta Sans"
+                                                ],
+                                                "headline-md": [
+                                                        "Plus Jakarta Sans"
+                                                ],
+                                                "headline-xl": [
+                                                        "Plus Jakarta Sans"
+                                                ],
+                                                "code": [
+                                                        "Inter"
+                                                ],
+                                                "label-sm": [
+                                                        "Inter"
+                                                ],
+                                                "body-md": [
+                                                        "Inter"
+                                                ]
+                                        },
+                                        "fontSize": {
+                                                "body-lg": [
+                                                        "18px",
+                                                        {
+                                                                "lineHeight": "1.6",
+                                                                "fontWeight": "400"
+                                                        }
+                                                ],
+                                                "display-lg": [
+                                                        "48px",
+                                                        {
+                                                                "lineHeight": "1.1",
+                                                                "letterSpacing": "-0.02em",
+                                                                "fontWeight": "700"
+                                                        }
+                                                ],
+                                                "headline-md": [
+                                                        "24px",
+                                                        {
+                                                                "lineHeight": "1.3",
+                                                                "fontWeight": "600"
+                                                        }
+                                                ],
+                                                "headline-xl": [
+                                                        "32px",
+                                                        {
+                                                                "lineHeight": "1.2",
+                                                                "fontWeight": "600"
+                                                        }
+                                                ],
+                                                "code": [
+                                                        "14px",
+                                                        {
+                                                                "lineHeight": "1.5",
+                                                                "fontWeight": "400"
+                                                        }
+                                                ],
+                                                "label-sm": [
+                                                        "14px",
+                                                        {
+                                                                "lineHeight": "1.4",
+                                                                "letterSpacing": "0.01em",
+                                                                "fontWeight": "500"
+                                                        }
+                                                ],
+                                                "body-md": [
+                                                        "16px",
+                                                        {
+                                                                "lineHeight": "1.6",
+                                                                "fontWeight": "400"
+                                                        }
+                                                ]
+                                        }
+                                },
+                        },
+                }
+        </script>
+        <style>
+                body {
+                        background-color: #131315;
+                        color: #f4ded7;
+                }
+
+                .card-bg {
+                        background-color: #0F172A;
+                        border: 1px solid #45464D;
+                }
+
+                .glass-overlay {
+                        background-color: rgba(15, 23, 42, 0.7);
+                        backdrop-filter: blur(12px);
+                }
+        </style>
+</head>
+
+<body class="font-body-md text-body-md antialiased min-h-screen flex flex-col">
+        <!-- TopAppBar -->
+        <header
+                class="sticky top-0 w-full z-50 border-b border-slate-800 bg-slate-900/80 backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+                <div class="flex flex-col">
+                        <div
+                                class="flex items-center justify-between px-6 h-16 max-w-[1440px] mx-auto w-full border-b border-white/10">
+                                <div class="flex items-center gap-gutter">
+                                        <a class="text-xl font-extrabold tracking-tighter text-orange-500"
+                                                href="#">TechUhat</a>
+                                        <div
+                                                class="hidden md:flex items-center gap-4 text-sm font-medium tracking-tight font-['Plus_Jakarta_Sans']">
+                                                <a class="text-slate-400 hover:text-white transition-colors hover:bg-white/5 rounded-md transition-all duration-200 px-3 py-2"
+                                                        href="#">Courses</a>
+                                                <a class="text-orange-500 border-b-2 border-orange-500 pb-1 px-3 py-2"
+                                                        href="#">Articles</a>
+                                                <a class="text-slate-400 hover:text-white transition-colors hover:bg-white/5 rounded-md transition-all duration-200 px-3 py-2"
+                                                        href="#">Practice</a>
+                                                <a class="text-slate-400 hover:text-white transition-colors hover:bg-white/5 rounded-md transition-all duration-200 px-3 py-2"
+                                                        href="#">Community</a>
+                                        </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                        <button
+                                                class="text-slate-400 hover:text-white transition-colors active:scale-95 transition-transform">
+                                                <span class="material-symbols-outlined"
+                                                        data-icon="notifications">notifications</span>
+                                        </button>
+                                        <button
+                                                class="text-slate-400 hover:text-white transition-colors active:scale-95 transition-transform">
+                                                <span class="material-symbols-outlined"
+                                                        data-icon="account_circle">account_circle</span>
+                                        </button>
+                                        <button
+                                                class="bg-primary-container text-white px-4 py-2 rounded-md font-label-sm text-label-sm hover:scale-105 active:scale-95 transition-all duration-200">Go
+                                                Pro</button>
+                                </div>
+                        </div>
+                </div>
+        </header>
+        <main
+                class="flex-grow max-w-[1440px] mx-auto w-full px-container-padding py-stack-lg flex flex-col gap-stack-lg">
+                <!-- Search & Categories Header -->
+                <section class="flex flex-col gap-stack-md">
+                        <div class="flex flex-col md:flex-row gap-gutter items-center justify-between">
+                                <div class="w-full md:w-1/2 relative">
+                                        <span
+                                                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+                                        <input class="w-full bg-[#0F172A] border border-[#45464D] rounded-lg py-3 pl-12 pr-4 text-on-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none font-body-md text-body-md"
+                                                placeholder="Search technical articles, tutorials, and insights..."
+                                                type="text" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 items-center w-full md:w-auto">
+                                        <span
+                                                class="font-label-sm text-label-sm text-on-surface-variant mr-2">Trending:</span>
+                                        <span
+                                                class="px-3 py-1 rounded-full border border-[#45464D] text-on-surface hover:border-primary-container hover:text-primary-container cursor-pointer transition-colors font-label-sm text-label-sm">React</span>
+                                        <span
+                                                class="px-3 py-1 rounded-full border border-[#45464D] text-on-surface hover:border-primary-container hover:text-primary-container cursor-pointer transition-colors font-label-sm text-label-sm">System
+                                                Design</span>
+                                        <span
+                                                class="px-3 py-1 rounded-full border border-[#45464D] text-on-surface hover:border-primary-container hover:text-primary-container cursor-pointer transition-colors font-label-sm text-label-sm">GraphQL</span>
+                                        <span
+                                                class="px-3 py-1 rounded-full border border-[#45464D] text-on-surface hover:border-primary-container hover:text-primary-container cursor-pointer transition-colors font-label-sm text-label-sm">DevOps</span>
+                                </div>
+                        </div>
+                </section>
+                <!-- Main Content Area -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+                        <!-- Latest Articles Grid (Left Col) -->
+                        <section class="lg:col-span-8 flex flex-col gap-stack-md">
+                                <h2 class="font-headline-xl text-headline-xl text-on-surface mb-stack-sm">Latest
+                                        Articles</h2>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+                                        <!-- Article Card 1 -->
+                                        <article
+                                                class="card-bg rounded-xl overflow-hidden hover:shadow-[0_0_15px_rgba(255,127,80,0.1)] transition-all duration-300 group flex flex-col">
+                                                <div class="h-48 overflow-hidden relative">
+                                                        <img alt="Code on screen"
+                                                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                                                data-alt="close up of complex code on a dark computer monitor with shallow depth of field and soft neon lighting"
+                                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtTNA_LJCJuynN86gm_zUYgps1sKhdJYeP9HLokj57I3UtZNAVvYSfY8HhREPHu-X-Y_fcUj0rOLHKU6qjQVzxn-yT6g-cKKj75ty7CVrRh8QQVzGRNYFdrafMBpLBcSaJpykFiYfo2trclMgTl4414MxCaOGd665JsrdzAbyhcXfAtoimDSQghtDKVFTseaLhC_g4bVaJZ2s4VBAlN6zFVvEo3fljFgTLQmIh4rKDZPwWHESWoZXLQZ5IO9k4sHjETIdzfDd56s0" />
+                                                        <div
+                                                                class="absolute top-4 left-4 bg-primary-container text-white px-2 py-1 rounded font-label-sm text-xs font-bold uppercase tracking-wider">
+                                                                Frontend</div>
+                                                </div>
+                                                <div class="p-6 flex flex-col gap-stack-sm flex-grow">
+                                                        <h3
+                                                                class="font-headline-md text-headline-md text-on-surface group-hover:text-primary-container transition-colors line-clamp-2">
+                                                                Building Resilient Micro-Frontends with Webpack 5</h3>
+                                                        <p
+                                                                class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+                                                                Explore the latest module federation features to create
+                                                                truly decoupled frontend architectures that scale
+                                                                effortlessly across large enterprise teams.</p>
+                                                        <div
+                                                                class="mt-auto pt-4 flex items-center justify-between text-on-surface-variant border-t border-[#45464D]">
+                                                                <div class="flex items-center gap-2">
+                                                                        <span
+                                                                                class="material-symbols-outlined text-[18px]">person</span>
+                                                                        <span class="font-label-sm text-label-sm">Alex
+                                                                                Chen</span>
+                                                                </div>
+                                                                <div class="flex items-center gap-2">
+                                                                        <span
+                                                                                class="material-symbols-outlined text-[18px]">schedule</span>
+                                                                        <span class="font-label-sm text-label-sm">8 min
+                                                                                read</span>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </article>
+                                        <!-- Article Card 2 -->
+                                        <article
+                                                class="card-bg rounded-xl overflow-hidden hover:shadow-[0_0_15px_rgba(255,127,80,0.1)] transition-all duration-300 group flex flex-col">
+                                                <div class="h-48 overflow-hidden relative">
+                                                        <img alt="Server rack"
+                                                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                                                data-alt="rows of illuminated server racks in a dark data center with cool blue and purple ambient lighting"
+                                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFZGd7JfB36G2aAgJpchUHk6tkjKjShbQHny-q9V7XZbPitwh0F2b2pCEmyCc9wjCLbhgoKmHK6jROZb0ivwzTJd8wKfuoR_EALfyf0s9J-6vY-hPiOEAYY04wgPWQ8TnQ7PXqXmn-HSuDwLyT1o3cYeA9BzNQyTZQhg6ZZMOeRTBRAbciEA84QC0Ta5fdl0IQKvMZrhjle_HTJDxMMYKGV5IV8_x_E_gb59sepNBUZNar9boARalDuAIkXuryNlkZK089EAij5Kk" />
+                                                        <div
+                                                                class="absolute top-4 left-4 bg-primary-container text-white px-2 py-1 rounded font-label-sm text-xs font-bold uppercase tracking-wider">
+                                                                Infrastructure</div>
+                                                </div>
+                                                <div class="p-6 flex flex-col gap-stack-sm flex-grow">
+                                                        <h3
+                                                                class="font-headline-md text-headline-md text-on-surface group-hover:text-primary-container transition-colors line-clamp-2">
+                                                                Kubernetes at Scale: Lessons from the Edge</h3>
+                                                        <p
+                                                                class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+                                                                A deep dive into managing thousands of pods, handling
+                                                                network policies, and ensuring zero-downtime deployments
+                                                                in mission-critical environments.</p>
+                                                        <div
+                                                                class="mt-auto pt-4 flex items-center justify-between text-on-surface-variant border-t border-[#45464D]">
+                                                                <div class="flex items-center gap-2">
+                                                                        <span
+                                                                                class="material-symbols-outlined text-[18px]">person</span>
+                                                                        <span class="font-label-sm text-label-sm">Sarah
+                                                                                Jenkins</span>
+                                                                </div>
+                                                                <div class="flex items-center gap-2">
+                                                                        <span
+                                                                                class="material-symbols-outlined text-[18px]">schedule</span>
+                                                                        <span class="font-label-sm text-label-sm">12 min
+                                                                                read</span>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </article>
+                                        <!-- Article Card 3 -->
+                                        <article
+                                                class="card-bg rounded-xl overflow-hidden hover:shadow-[0_0_15px_rgba(255,127,80,0.1)] transition-all duration-300 group flex flex-col md:col-span-2">
+                                                <div class="flex flex-col md:flex-row h-full">
+                                                        <div class="md:w-1/2 h-64 md:h-auto overflow-hidden relative">
+                                                                <img alt="Matrix style code"
+                                                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                                                        data-alt="abstract matrix style green code cascading down a black screen with slight glowing effect"
+                                                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHpar3_Ln5QqO4Aotza-H5C6LCDxBZksbfDC9pKtwqD0iYZ5pqd4mMqbLzYqxhK4W2wOh9cUcVpIUJt_DIykIzZHsw5WnvQns0QJ-tg65Ojwnuk5tRQP-OFLyU14iACTx1Pz2aXF_bh5aLK85gPIrY2c4D6bTG8HpnGyBACvQaVXDfOUEXkQQzsibWEo6aXtmFZZIGuNf4c5MloWlyxyAdRvqQ2AnHLEZthgKQEQBEplokSzKEbAyO7hQ2rFOkC_8Nr-U9d_S8sas" />
+                                                                <div
+                                                                        class="absolute top-4 left-4 bg-primary-container text-white px-2 py-1 rounded font-label-sm text-xs font-bold uppercase tracking-wider">
+                                                                        Security</div>
+                                                        </div>
+                                                        <div
+                                                                class="md:w-1/2 p-6 flex flex-col gap-stack-sm justify-center">
+                                                                <h3
+                                                                        class="font-headline-xl text-headline-xl text-on-surface group-hover:text-primary-container transition-colors">
+                                                                        Zero Trust Architecture: A Practical Guide</h3>
+                                                                <p
+                                                                        class="font-body-lg text-body-lg text-on-surface-variant mt-2">
+                                                                        Moving beyond the perimeter defense model. Learn
+                                                                        how to implement continuous authentication,
+                                                                        least privilege access, and micro-segmentation
+                                                                        in modern cloud applications.</p>
+                                                                <div
+                                                                        class="mt-6 pt-4 flex items-center gap-6 text-on-surface-variant border-t border-[#45464D]">
+                                                                        <div class="flex items-center gap-2">
+                                                                                <span
+                                                                                        class="material-symbols-outlined text-[18px]">person</span>
+                                                                                <span
+                                                                                        class="font-label-sm text-label-sm">Dr.
+                                                                                        Marcus Vance</span>
+                                                                        </div>
+                                                                        <div class="flex items-center gap-2">
+                                                                                <span
+                                                                                        class="material-symbols-outlined text-[18px]">schedule</span>
+                                                                                <span
+                                                                                        class="font-label-sm text-label-sm">15
+                                                                                        min read</span>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </article>
+                                </div>
+                        </section>
+                        <!-- Trending Sidebar (Right Col) -->
+                        <aside class="lg:col-span-4 flex flex-col gap-stack-md">
+                                <div class="card-bg rounded-xl p-6 flex flex-col gap-stack-sm sticky top-24">
+                                        <h3
+                                                class="font-headline-md text-headline-md text-on-surface border-b border-[#45464D] pb-4 mb-2 flex items-center gap-2">
+                                                <span
+                                                        class="material-symbols-outlined text-primary-container">trending_up</span>
+                                                Trending Now
+                                        </h3>
+                                        <ul class="flex flex-col gap-4">
+                                                <li class="group cursor-pointer">
+                                                        <a class="flex flex-col gap-1" href="#">
+                                                                <span
+                                                                        class="font-label-sm text-label-sm text-primary-container uppercase tracking-wider text-xs">AI
+                                                                        &amp; ML</span>
+                                                                <h4
+                                                                        class="font-headline-md text-[18px] leading-tight text-on-surface group-hover:text-primary transition-colors">
+                                                                        Optimizing LLM Inference on Edge Devices</h4>
+                                                                <span
+                                                                        class="font-label-sm text-label-sm text-on-surface-variant mt-1">5
+                                                                        min read</span>
+                                                        </a>
+                                                </li>
+                                                <hr class="border-[#45464D]" />
+                                                <li class="group cursor-pointer">
+                                                        <a class="flex flex-col gap-1" href="#">
+                                                                <span
+                                                                        class="font-label-sm text-label-sm text-primary-container uppercase tracking-wider text-xs">Database</span>
+                                                                <h4
+                                                                        class="font-headline-md text-[18px] leading-tight text-on-surface group-hover:text-primary transition-colors">
+                                                                        Why We Migrated from Postgres to DynamoDB</h4>
+                                                                <span
+                                                                        class="font-label-sm text-label-sm text-on-surface-variant mt-1">10
+                                                                        min read</span>
+                                                        </a>
+                                                </li>
+                                                <hr class="border-[#45464D]" />
+                                                <li class="group cursor-pointer">
+                                                        <a class="flex flex-col gap-1" href="#">
+                                                                <span
+                                                                        class="font-label-sm text-label-sm text-primary-container uppercase tracking-wider text-xs">Architecture</span>
+                                                                <h4
+                                                                        class="font-headline-md text-[18px] leading-tight text-on-surface group-hover:text-primary transition-colors">
+                                                                        The Return of the Monolith: When Microservices
+                                                                        Fail</h4>
+                                                                <span
+                                                                        class="font-label-sm text-label-sm text-on-surface-variant mt-1">7
+                                                                        min read</span>
+                                                        </a>
+                                                </li>
+                                                <hr class="border-[#45464D]" />
+                                                <li class="group cursor-pointer">
+                                                        <a class="flex flex-col gap-1" href="#">
+                                                                <span
+                                                                        class="font-label-sm text-label-sm text-primary-container uppercase tracking-wider text-xs">Web3</span>
+                                                                <h4
+                                                                        class="font-headline-md text-[18px] leading-tight text-on-surface group-hover:text-primary transition-colors">
+                                                                        Understanding Smart Contract Security
+                                                                        Vulnerabilities</h4>
+                                                                <span
+                                                                        class="font-label-sm text-label-sm text-on-surface-variant mt-1">14
+                                                                        min read</span>
+                                                        </a>
+                                                </li>
+                                        </ul>
+                                        <div class="mt-6 pt-4 border-t border-[#45464D]">
+                                                <h4 class="font-label-sm text-label-sm text-on-surface mb-3">Subscribe
+                                                        to Newsletter</h4>
+                                                <div class="flex gap-2">
+                                                        <input class="w-full bg-[#1b110d] border border-[#45464D] rounded-md py-2 px-3 text-on-surface focus:border-primary-container outline-none font-body-md text-sm"
+                                                                placeholder="dev@email.com" type="email" />
+                                                        <button
+                                                                class="bg-primary-container text-white px-3 py-2 rounded-md hover:bg-opacity-90 transition-colors">
+                                                                <span
+                                                                        class="material-symbols-outlined text-[18px]">send</span>
+                                                        </button>
+                                                </div>
+                                        </div>
+                                </div>
+                        </aside>
+                </div>
+        </main>
+        <!-- Footer -->
+        <footer class="w-full border-t border-slate-800 mt-auto bg-[#131315] flat no-shadows">
+                <div
+                        class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center py-8 px-8 gap-4">
+                        <div class="text-lg font-bold text-slate-200 font-['Plus_Jakarta_Sans']">TechUhat</div>
+                        <div class="flex gap-6 font-['Plus_Jakarta_Sans'] text-xs text-slate-500">
+                                <a class="text-slate-500 hover:text-orange-500 hover:underline underline-offset-4 transition-all duration-300"
+                                        href="#">Documentation</a>
+                                <a class="text-slate-500 hover:text-orange-500 hover:underline underline-offset-4 transition-all duration-300"
+                                        href="#">Changelog</a>
+                                <a class="text-slate-500 hover:text-orange-500 hover:underline underline-offset-4 transition-all duration-300"
+                                        href="#">Privacy</a>
+                                <a class="text-slate-500 hover:text-orange-500 hover:underline underline-offset-4 transition-all duration-300"
+                                        href="#">Support</a>
+                        </div>
+                        <div class="font-['Plus_Jakarta_Sans'] text-xs text-slate-500">
+                                © 2024 TechUhat. Built for technical mastery.
+                        </div>
+                </div>
+        </footer>
+</body>
+
+</html>

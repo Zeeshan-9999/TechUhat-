@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TechUhat Learning Player</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#4dd9e4",
+                        "primary": "#ffb59c",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#004145",
+                        "surface-variant": "#3f322e",
+                        "surface-dim": "#1b110d",
+                        "surface-container-highest": "#3f322e",
+                        "secondary-container": "#3f465c",
+                        "on-secondary-fixed": "#131b2e",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#ffb59c",
+                        "primary-fixed": "#ffdbcf",
+                        "tertiary-fixed": "#7af4ff",
+                        "tertiary-container": "#00b5c0",
+                        "on-primary": "#5c1a00",
+                        "background": "#1b110d",
+                        "on-tertiary-fixed": "#002022",
+                        "outline": "#a68b82",
+                        "on-secondary": "#283044",
+                        "on-tertiary-fixed-variant": "#004f54",
+                        "on-primary-fixed-variant": "#822800",
+                        "surface-container-high": "#342723",
+                        "outline-variant": "#57423b",
+                        "on-surface": "#f4ded7",
+                        "surface-container-lowest": "#160c08",
+                        "on-surface-variant": "#dec0b6",
+                        "on-primary-fixed": "#380c00",
+                        "surface-bright": "#443632",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#1b110d",
+                        "primary-container": "#ff7f50",
+                        "inverse-on-surface": "#3a2e29",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "secondary-fixed": "#dae2fd",
+                        "surface-tint": "#ffb59c",
+                        "on-error": "#690005",
+                        "tertiary": "#4dd9e4",
+                        "on-background": "#f4ded7",
+                        "secondary": "#bec6e0",
+                        "inverse-surface": "#f4ded7",
+                        "inverse-primary": "#a43c12",
+                        "on-tertiary": "#00363a",
+                        "on-primary-container": "#6c2000",
+                        "on-secondary-container": "#adb4ce",
+                        "surface-container": "#281d19",
+                        "surface-container-low": "#241915"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "0.5rem",
+                        "stack-lg": "2rem",
+                        "gutter": "1.5rem",
+                        "stack-md": "1rem",
+                        "unit": "4px",
+                        "container-padding": "2rem"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "code": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-xl": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "code": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-sm": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #131315;
+            color: #f4ded7;
+        }
+
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid #45464D;
+        }
+
+        .glass-overlay {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+        }
+
+        .glow-hover:hover {
+            box-shadow: 0 0 15px rgba(255, 127, 80, 0.2);
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col font-body-md text-body-md">
+    <!-- Top Navigation Omitted based on rules: Top-level destination required, this is a transactional/focused screen (Back to Course implies task focus) -->
+    <!-- Header for Learning Player -->
+    <header
+        class="sticky top-0 z-40 bg-[#0F172A] border-b border-[#45464D] px-6 h-16 flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-4">
+            <button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-xl">arrow_back</span>
+                <span class="font-label-sm text-label-sm">Back to Course</span>
+            </button>
+            <div class="h-6 w-px bg-[#45464D] mx-2 hidden sm:block"></div>
+            <h1 class="font-headline-md text-body-lg sm:text-headline-md truncate hidden sm:block">Advanced React
+                Architecture: Patterns &amp; Anti-patterns</h1>
+        </div>
+        <div class="flex items-center gap-4">
+            <div class="hidden md:flex items-center gap-3">
+                <div class="flex flex-col items-end">
+                    <span class="font-label-sm text-label-sm text-on-surface-variant">Course Progress</span>
+                    <span class="font-label-sm text-label-sm text-primary font-bold">42%</span>
+                </div>
+                <div class="w-32 h-2 bg-surface-container rounded-full overflow-hidden">
+                    <div class="h-full bg-primary rounded-full w-[42%] shadow-[0_0_8px_rgba(255,127,80,0.5)]"></div>
+                </div>
+            </div>
+            <button
+                class="bg-surface-container-high border border-[#45464D] hover:bg-surface-container-highest p-2 rounded-lg transition-colors glow-hover">
+                <span class="material-symbols-outlined text-on-surface">settings</span>
+            </button>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col lg:flex-row overflow-hidden relative">
+        <!-- Left Column: Video & Tabs -->
+        <div class="flex-1 flex flex-col overflow-y-auto scrollbar-hide">
+            <!-- Video Player Area -->
+            <div class="w-full aspect-video bg-black relative group">
+                <!-- Placeholder for Video Content -->
+                <img alt="Video Placeholder" class="w-full h-full object-cover opacity-60"
+                    data-alt="Close up of computer screen showing modern react code with dark syntax highlighting, glowing teal and purple text, professional software development setting"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvn3wtcXpH679sFsV6tCuXhpNHdbmE8_o0oY031KJkleBUEM52lAXz0WgRNmT5IeQ1xRkhvZeapYy0FzNPOh0fUD4xPT90FvWzmWUrZVmD5XnFAWmUESZ5yRWKXqeHkQvDcSE6NP2b_e41DFyy5Br5BqViFbPSF9SI29-ZroL0RomM64MyBPTtnbgICIB3EcxpOESwPz2jXHnUmgfY5v9B4Otv6xAeLZ8YRbWGIkxzKYXZ3krA5YKzIJbxG-phHrJHmNb9Y1Mvxdc" />
+                <!-- Player Controls Overlay -->
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-full h-1 bg-surface-container rounded-full overflow-hidden cursor-pointer">
+                            <div class="h-full bg-primary rounded-full w-[35%] relative">
+                                <div
+                                    class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-lg">
+                                </div>
+                            </div>
+                        </div>
+                        <span class="font-code text-code text-white">04:20 / 12:45</span>
+                    </div>
+                    <div class="flex justify-between items-center text-white">
+                        <div class="flex items-center gap-4">
+                            <button class="hover:text-primary transition-colors"><span
+                                    class="material-symbols-outlined text-3xl"
+                                    data-weight="fill">play_arrow</span></button>
+                            <button class="hover:text-primary transition-colors"><span
+                                    class="material-symbols-outlined">volume_up</span></button>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <button class="hover:text-primary transition-colors font-label-sm text-label-sm">1x</button>
+                            <button class="hover:text-primary transition-colors"><span
+                                    class="material-symbols-outlined">closed_caption</span></button>
+                            <button class="hover:text-primary transition-colors"><span
+                                    class="material-symbols-outlined">fullscreen</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Content Below Video -->
+            <div class="p-6 lg:p-8 max-w-4xl mx-auto w-full">
+                <h2 class="font-headline-xl text-headline-xl mb-2">2.4 Implementing Context Effectively</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-8">Learn how to avoid unnecessary
+                    re-renders when using React Context by splitting state and dispatch context, and memoizing values.
+                </p>
+                <!-- Tabs -->
+                <div class="flex border-b border-[#45464D] mb-8">
+                    <button
+                        class="px-6 py-3 font-label-sm text-label-sm text-primary border-b-2 border-primary mr-4 transition-colors">Course
+                        Notes</button>
+                    <button
+                        class="px-6 py-3 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors mr-4">Discussion
+                        (24)</button>
+                    <button
+                        class="px-6 py-3 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors">Resources
+                        (3)</button>
+                </div>
+                <!-- Notes Tab Content -->
+                <div class="space-y-6">
+                    <div class="glass-panel rounded-xl p-6">
+                        <h3 class="font-headline-md text-headline-md mb-4 text-tertiary-fixed-dim">Key Takeaways</h3>
+                        <ul class="space-y-3 font-body-md text-body-md text-on-surface">
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary shrink-0 mt-1"
+                                    data-weight="fill">check_circle</span>
+                                <span>Always separate state and dispatch into two distinct contexts to prevent consumers
+                                    that only need to dispatch from re-rendering.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary shrink-0 mt-1"
+                                    data-weight="fill">check_circle</span>
+                                <span>Use <code>useMemo</code> for complex context values, but understand it's not a
+                                    silver bullet if the dependencies change frequently.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="glass-panel rounded-xl p-6">
+                        <h3 class="font-headline-md text-headline-md mb-4 text-tertiary-fixed-dim">Code Snippet: Split
+                            Context</h3>
+                        <div
+                            class="bg-[#0b101d] rounded-lg p-4 font-code text-code text-on-surface border border-[#45464D] overflow-x-auto">
+                            <pre><code><span class="text-tertiary-fixed-dim">const</span> StateContext = createContext<span class="text-primary">(</span><span class="text-tertiary-fixed-dim">null</span><span class="text-primary">)</span>;
+<span class="text-tertiary-fixed-dim">const</span> DispatchContext = createContext<span class="text-primary">(</span><span class="text-tertiary-fixed-dim">null</span><span class="text-primary">)</span>;
+
+<span class="text-tertiary-fixed-dim">export function</span> Provider<span class="text-primary">({</span> children <span class="text-primary">}) {</span>
+  <span class="text-tertiary-fixed-dim">const</span> <span class="text-primary">[</span>state<span class="text-on-surface">,</span> dispatch<span class="text-primary">]</span> = useReducer<span class="text-primary">(</span>reducer<span class="text-on-surface">,</span> initialState<span class="text-primary">)</span>;
+  
+  <span class="text-tertiary-fixed-dim">return</span> <span class="text-primary">(</span>
+    <span class="text-surface-variant">&lt;</span><span class="text-primary">DispatchContext.Provider</span> value<span class="text-surface-variant">=</span><span class="text-primary">{</span>dispatch<span class="text-primary">}</span><span class="text-surface-variant">&gt;</span>
+      <span class="text-surface-variant">&lt;</span><span class="text-primary">StateContext.Provider</span> value<span class="text-surface-variant">=</span><span class="text-primary">{</span>state<span class="text-primary">}</span><span class="text-surface-variant">&gt;</span>
+        <span class="text-primary">{</span>children<span class="text-primary">}</span>
+      <span class="text-surface-variant">&lt;/</span><span class="text-primary">StateContext.Provider</span><span class="text-surface-variant">&gt;</span>
+    <span class="text-surface-variant">&lt;/</span><span class="text-primary">DispatchContext.Provider</span><span class="text-surface-variant">&gt;</span>
+  <span class="text-primary">)</span>;
+<span class="text-primary">}</span></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Right Column: Sidebar Course Navigation -->
+        <aside
+            class="w-full lg:w-[400px] flex-shrink-0 border-l border-[#45464D] bg-[#0F172A] flex flex-col h-[400px] lg:h-auto">
+            <div class="p-4 border-b border-[#45464D] flex justify-between items-center bg-[#131315]">
+                <h3 class="font-headline-md text-body-lg font-semibold">Course Content</h3>
+                <span class="material-symbols-outlined text-on-surface-variant">format_list_bulleted</span>
+            </div>
+            <div class="overflow-y-auto scrollbar-hide flex-1 p-2 space-y-1">
+                <!-- Module 1 (Completed) -->
+                <div class="mb-2">
+                    <button
+                        class="w-full flex justify-between items-center p-3 text-left hover:bg-surface-container rounded-lg transition-colors">
+                        <div class="flex flex-col">
+                            <span class="font-label-sm text-label-sm text-on-surface-variant">Section 1</span>
+                            <span class="font-headline-md text-body-md font-medium text-on-surface">Foundation
+                                Review</span>
+                        </div>
+                        <span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+                    </button>
+                    <div class="pl-2 pr-2 hidden">
+                        <!-- Items would go here -->
+                    </div>
+                </div>
+                <!-- Module 2 (Active) -->
+                <div class="mb-2">
+                    <button
+                        class="w-full flex justify-between items-center p-3 text-left bg-surface-container rounded-lg transition-colors mb-1">
+                        <div class="flex flex-col">
+                            <span class="font-label-sm text-label-sm text-on-surface-variant">Section 2</span>
+                            <span class="font-headline-md text-body-md font-medium text-on-surface">State Management
+                                Patterns</span>
+                        </div>
+                        <span class="material-symbols-outlined text-on-surface">expand_less</span>
+                    </button>
+                    <div class="pl-2 pr-2 py-1 space-y-1">
+                        <!-- Lesson: Completed -->
+                        <div
+                            class="flex items-start p-3 rounded-lg hover:bg-surface-container-high transition-colors cursor-pointer group">
+                            <span class="material-symbols-outlined text-primary mt-0.5 mr-3 shrink-0"
+                                data-weight="fill">check_circle</span>
+                            <div class="flex flex-col flex-1">
+                                <span
+                                    class="font-body-md text-label-sm text-on-surface-variant group-hover:text-on-surface transition-colors">2.1
+                                    The Limits of useState</span>
+                                <span
+                                    class="font-label-sm text-xs text-on-surface-variant opacity-70 flex items-center gap-1 mt-1">
+                                    <span class="material-symbols-outlined text-[14px]">play_circle</span> 08:15
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Lesson: Completed -->
+                        <div
+                            class="flex items-start p-3 rounded-lg hover:bg-surface-container-high transition-colors cursor-pointer group">
+                            <span class="material-symbols-outlined text-primary mt-0.5 mr-3 shrink-0"
+                                data-weight="fill">check_circle</span>
+                            <div class="flex flex-col flex-1">
+                                <span
+                                    class="font-body-md text-label-sm text-on-surface-variant group-hover:text-on-surface transition-colors">2.2
+                                    Migrating to useReducer</span>
+                                <span
+                                    class="font-label-sm text-xs text-on-surface-variant opacity-70 flex items-center gap-1 mt-1">
+                                    <span class="material-symbols-outlined text-[14px]">play_circle</span> 14:30
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Lesson: Active -->
+                        <div
+                            class="flex items-start p-3 rounded-lg bg-surface-container-highest border-l-2 border-primary transition-colors cursor-pointer group shadow-sm">
+                            <span class="material-symbols-outlined text-primary mt-0.5 mr-3 shrink-0"
+                                data-weight="fill">play_circle</span>
+                            <div class="flex flex-col flex-1">
+                                <span class="font-body-md text-label-sm text-primary font-medium">2.4 Implementing
+                                    Context Effectively</span>
+                                <span
+                                    class="font-label-sm text-xs text-on-surface-variant opacity-70 flex items-center gap-1 mt-1">
+                                    <span class="material-symbols-outlined text-[14px] text-primary">play_circle</span>
+                                    12:45
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Lesson: Locked/Upcoming -->
+                        <div
+                            class="flex items-start p-3 rounded-lg hover:bg-surface-container-high transition-colors cursor-pointer group opacity-60 hover:opacity-100">
+                            <span
+                                class="material-symbols-outlined text-on-surface-variant mt-0.5 mr-3 shrink-0">radio_button_unchecked</span>
+                            <div class="flex flex-col flex-1">
+                                <span
+                                    class="font-body-md text-label-sm text-on-surface-variant group-hover:text-on-surface transition-colors">2.5
+                                    Context + Reducer Pattern</span>
+                                <span
+                                    class="font-label-sm text-xs text-on-surface-variant opacity-70 flex items-center gap-1 mt-1">
+                                    <span class="material-symbols-outlined text-[14px]">play_circle</span> 18:20
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 3 (Upcoming) -->
+                <div class="mb-2">
+                    <button
+                        class="w-full flex justify-between items-center p-3 text-left hover:bg-surface-container rounded-lg transition-colors opacity-70">
+                        <div class="flex flex-col">
+                            <span class="font-label-sm text-label-sm text-on-surface-variant">Section 3</span>
+                            <span class="font-headline-md text-body-md font-medium text-on-surface">Performance
+                                Optimization</span>
+                        </div>
+                        <span class="material-symbols-outlined text-on-surface-variant">lock</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+    </main>
+</body>
+
+</html>
